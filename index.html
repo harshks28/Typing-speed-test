@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>⌨️ Typing Speed Test</h1>
+    <p class="subtitle">Start typing to begin. The timer starts with your first key.</p>
+
+    <!-- Time selection -->
+    <div class="modes" id="modes">
+      <button data-time="15">15s</button>
+      <button data-time="30" class="active">30s</button>
+      <button data-time="60">60s</button>
+    </div>
+
+    <!-- Live stats -->
+    <div class="stats">
+      <div class="stat"><span id="time">30</span><small>Time (s)</small></div>
+      <div class="stat"><span id="wpm">0</span><small>WPM</small></div>
+      <div class="stat"><span id="accuracy">100</span><small>Accuracy %</small></div>
+      <div class="stat"><span id="best">0</span><small>Best WPM</small></div>
+    </div>
+
+    <!-- Text to type; the hidden textarea captures the keystrokes -->
+    <div class="typing-area" id="typingArea">
+      <div class="text" id="text"></div>
+      <textarea id="input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Typing input"></textarea>
+    </div>
+
+    <button class="restart" id="restart">↻ Restart</button>
+
+    <!-- Result card shown after the test ends -->
+    <section class="result hidden" id="result">
+      <h2>Time's up! 🎉</h2>
+      <p><b id="rWpm">0</b> WPM &nbsp;|&nbsp; <b id="rAcc">0</b>% accuracy &nbsp;|&nbsp; <b id="rErr">0</b> mistakes</p>
+      <p id="rMsg"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
